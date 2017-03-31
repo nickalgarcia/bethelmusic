@@ -84,7 +84,7 @@ nav.bm-nav {
     font-family: 'Montserrat', sans-serif;
 }
 
-.stat .number {
+.stat .counter, .stat .number {
     font-size: 60px;
     color: #95AAB5;
 }

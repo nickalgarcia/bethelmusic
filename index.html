@@ -29,7 +29,7 @@
     </header>
     <div class="wrap">
         <div id="hero">
-            <img src="../bethelmusic/img/bg.jpg" alt="Awesome Background">
+            <img src="../bethelmusic/img/background.png" alt="Awesome Background">
             <div class="hero-text">Lorem Ipsum dolor ist amet consectetur <span><a href="#">Lorem Ipsum</a></span></div>
         </div>
         <div id="masonry">
@@ -47,7 +47,9 @@
             <div id="stories-boxes2">
                 <div class="story-box grid9"><img src="../bethelmusic/img/Group 15.png"></div>
                 <div class="story-box grid30"><img src="../bethelmusic/img/Group 8.png"></div>
-                <div class="story-box grid22"><a data-fancybox href="https://vimeo.com/191947042"><img src="../bethelmusic/img/Group 14.png"><img class="play-button" src="../bethelmusic/img/Group 20.png"></a></div>
+                <div class="story-box grid22">
+                    <a data-fancybox href="https://vimeo.com/191947042"><img src="../bethelmusic/img/Group 14.png"><img class="play-button" src="../bethelmusic/img/Group 20.png"></a>
+                </div>
                 <div class="story-box grid9"><img src="../bethelmusic/img/Group 18.png"><img src="../bethelmusic/img/Group 19.png"></div>
                 <div class="story-box grid23"><img src="../bethelmusic/img/Group 12.png"><img class="play-button" src="../bethelmusic/img/Group 20.png"></div>
                 <div class="story-box grid7"><img src="../bethelmusic/img/Group 13.png"></div>
@@ -61,19 +63,19 @@
             <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In lacinia sodales lectus et placerat.</div>
             <div class="row">
                 <div class="col-md-3 stat">
-                    <div class="number">150</div>
+                    <div class="number"><span class="counter" data-count="150"></span></div>
                     <div class="description">Lorem Ipsum Dolor</div>
                     <hr>Lorem ipsum dolor site amet, consectetur adipiscing elit. In lacinia sodales lectus et placerat.</div>
                 <div class="col-md-3 stat">
-                    <div class="number">650</div>
+                    <div class="number"><span class="counter" data-count="650"></span></div>
                     <div class="description">Lorem Ipsum Dolor</div>
                     <hr>Lorem ipsum dolor site amet, consectetur adipiscing elit. In lacinia sodales lectus et placerat.</div>
                 <div class="col-md-3 stat">
-                    <div class="number">19k</div>
+                    <div class="number"><span class="counter" data-count="19"></span>k</div>
                     <div class="description">Lorem Ipsum Dolor</div>
                     <hr>Lorem ipsum dolor site amet, consectetur adipiscing elit. In lacinia sodales lectus et placerat.</div>
                 <div class="col-md-3 stat">
-                    <div class="number">30m</div>
+                    <div class="number"><span class="counter" data-count="30"></span>m</div>
                     <div class="description">Lorem Ipsum Dolor</div>
                     <hr>Lorem ipsum dolor site amet, consectetur adipiscing elit. In lacinia sodales lectus et placerat.</div>
             </div>
@@ -99,9 +101,45 @@
     </div>
     <footer></footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>
+    <script src="../bethelmusic/js/countUp.js"></script>
+    <script>
+    $(window).scroll(startCounter);
+
+    function startCounter() {
+        if ($(window).scrollTop() > 900) {
+            $(window).off("scroll", startCounter);
+            $('.counter').each(function() {
+                var $this = $(this),
+                    countTo = $this.attr('data-count');
+
+                $({
+                    countNum: $this.text()
+                }).animate({
+                        countNum: countTo
+                    },
+
+                    {
+
+                        duration: 2000,
+                        easing: 'linear',
+                        step: function() {
+                            $this.text(Math.floor(this.countNum));
+                        },
+                        complete: function() {
+                            $this.text(this.countNum);
+                            //alert('finished');
+                        }
+
+                    });
+
+
+
+            });
+        }
+    }
+    </script>
 </body>
 
 </html>
