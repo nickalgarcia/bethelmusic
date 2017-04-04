@@ -1,29 +1,105 @@
+@font-face {
+    font-family: Gotham;
+    src: url(../font/Gotham-Medium.otf);
+}
+
+@font-face {
+    font-family: GothamBook;
+    src: url(../font/Gotham-Book.otf);
+}
+
+@font-face {
+    font-family: GothamLight;
+    src: url(../font/Gotham-Light.otf);
+}
+
+@font-face {
+    font-family: GothamBold;
+    src: url(../font/Gotham-Bold.otf);
+}
+
+@font-face {
+    font-family: Utopia;
+    src: url(..font/Utopia-Regular.ttf);
+}
+
+@font-face {
+    font-family: UtopiaHeadline;
+    src: url(..font/Utopia-Headline.ttf);
+}
+
+@font-face {
+    font-family: UtopiaItalic;
+    src: url(..font/Utopia-Italic.ttf);
+}
+
+* {
+    font-family: 'GothamBook', sans-serif;
+}
+
 img {
     max-width: 100%;
     height: auto;
 }
 
 header {
-    position: fixed;
+    position: absolute;
     width: 100%;
     z-index: 999;
+    top: 5%;
 }
 
 .btn {
     background-color: transparent;
     color: #b4b4b4;
-    font-family: 'Montserrat', serif;
-    border: 2px solid #b4b4b4;
+    font-family: 'GothamBold', sans-serif;
+    border: 2px solid rgba(127, 127, 127, 0.5);
     text-transform: uppercase;
     border-radius: 0;
     padding: 10px 30px;
 }
 
+.btn:hover {
+    background: rgba(127, 127, 127, 0.5);
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.clearfix {
+    display: block;
+    clear: both;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
 
 /**NAV**/
 
+a.logo {
+    background: #fff;
+    width: 147px;
+    left: 5%;
+    position: absolute;
+    height: 14px;
+    top: 25%;
+}
+
+.bm-nav .nav li a:hover,
+.bm-nav .nav li a:focus {
+    background: transparent;
+    color: rgba(127, 127, 127, 0.5);
+}
+
 nav.bm-nav {
     float: right;
+    margin-right: 2%;
 }
 
 .bm-nav .nav li {
@@ -32,7 +108,7 @@ nav.bm-nav {
 
 .bm-nav .nav li a {
     color: #fff;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'GothamBold', sans-serif;
     text-transform: uppercase;
 }
 
@@ -40,7 +116,6 @@ nav.bm-nav {
 /*HERO*/
 
 #hero {
-    max-height: 700px;
     overflow: hidden;
     position: relative;
 }
@@ -49,8 +124,7 @@ nav.bm-nav {
     position: absolute;
     top: 40%;
     color: #fff;
-    font-size: 24px;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
     font-weight: 200;
     text-align: center;
     width: 100%;
@@ -58,13 +132,25 @@ nav.bm-nav {
 
 .hero-text span {
     display: block;
-    font-size: 55px;
+    font-size: 68px;
     font-style: italic;
+}
+
+.hero-text span a {
+    font-family: 'UtopiaItalic', serif;
 }
 
 .hero-text a {
     color: #fff;
     text-decoration: underline;
+}
+
+#hero .fa-angle-down {
+    position: absolute;
+    bottom: 10%;
+    font-size: 24px;
+    color: #fff;
+    left: 50%;
 }
 
 
@@ -75,57 +161,93 @@ nav.bm-nav {
     padding: 40px 0;
 }
 
-#stats .title {
-    font-size: 24px;
+#stats .title,
+#blurb .title,
+#action .title,
+#masonry .title,
+#project .title {
+    font-size: 36px;
+    font-family: 'UtopiaHeadline', serif;
+    color: #4F5050;
 }
 
 #stats .description {
-    color: #b4b4b4;
-    font-family: 'Montserrat', sans-serif;
+    color: rgba(79, 80, 80, 0.5);
+    font-size: 17px;
+    width: 50%;
+    margin: auto;
 }
 
-.stat .counter, .stat .number {
-    font-size: 60px;
+.number-title {
+    font-weight: 400;
+    font-family: 'Utopia', serif;
+    font-size: 17px;
+}
+
+.stat .counter,
+.stat .number {
+    font-size: 72px;
     color: #95AAB5;
+    font-family: 'UtopiaHeadline', serif;
 }
 
 #stats .stat .description {
-    font-family: inherit;
-    font-weight: 400;
+    font-family: 'Gotham', sans-serif;
+    font-weight: 500;
+    color: #AAA9A7;
+    font-size: 12px;
+    width: 85%;
 }
 
 .stat hr {
     width: 15%;
-    border-top: 4px solid #C6C5C4;
+    border-top: 2px solid #91908D;
 }
 
 .stat {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
+    font-family: 'Gotham', sans-serif;
+    font-weight: 500;
     color: #AAA9A7;
+    font-size: 12px;
 }
 
 
 /*WHO WE ARE*/
 
-.who-we-are-container {
+#blurb {
+    padding: 150px 0;
+}
+
+.blurb-container {
     width: 60%;
     margin: auto;
     display: block;
     text-align: center;
-    background: #F5F3F1;
+    background: #EBE7E3;
     padding: 100px;
+    position: relative;
 }
 
-#who-we-are .title {
-    font-size: 30px;
-    color: #000;
-}
-
-#who-we-are {
-    color: #b4b4b4;
-    font-family: 'Montserrat', sans-serif;
+#blurb .description {
+    color: rgba(79, 80, 80, 0.5);
     padding: 40px 0;
+    font-size: 17px;
+}
+
+.line-top {
+    border-left: 1px solid rgba(151, 151, 151, 0.5);
+    height: 25%;
+    position: absolute;
+    top: -12%;
+    left: 50%;
+}
+
+.line-bottom {
+    border-left: 1px solid rgba(151, 151, 151, 0.5);
+    height: 25%;
+    position: absolute;
+    bottom: -12%;
+    left: 50%;
 }
 
 
@@ -134,7 +256,24 @@ nav.bm-nav {
 #action {
     text-align: center;
     color: #b4b4b4;
-    font-family: 'Montserrat', sans-serif;
+    padding: 150px 0;
+}
+
+#action .cta,
+#masonry .cta,
+#project .cta {
+    font-size: 10px;
+    color: rgba(79, 80, 80, 0.5);
+    text-transform: uppercase;
+    font-family: 'GothamBold', sans-serif;
+}
+
+#action .content {
+    font-size: 17px;
+    color: rgba(79, 80, 80, 0.5);
+    padding-bottom: 30px;
+    width: 40%;
+    margin: auto;
 }
 
 footer {
@@ -146,14 +285,36 @@ footer {
 
 /*MASONRY GRID*/
 
-#stories-boxes1, #stories-boxes2 {
+#masonry {
+    text-align: center;
+    color: #b4b4b4;
+    margin: 100px 0 40px;
+}
+
+#masonry .content {
+    font-size: 17px;
+    color: rgba(79, 80, 80, 0.5);
+    padding-bottom: 30px;
+    width: 35%;
+    margin: auto;
+}
+
+#stories-boxes1,
+#stories-boxes2 {
     width: 100%;
+    overflow: overlay;
 }
 
 .story-box {
-	float: left;
-	text-align: center;
-	position: relative;
+    float: left;
+    text-align: center;
+    position: relative;
+}
+
+#stories-boxes1 .story-box {
+    display: table-cell;
+    vertical-align: bottom;
+    float: none;
 }
 
 .story-box:nth-last-child(2) {
@@ -164,6 +325,16 @@ footer {
     text-align: left;
 }
 
+#stories-boxes1 .story-box .thumb {
+    width: 100%;
+    position: relative;
+}
+
+#stories-boxes2 .story-box {
+    float: left;
+    text-align: center;
+}
+
 .story-box .play-button {
     width: 66px;
     height: 67px;
@@ -171,6 +342,35 @@ footer {
     top: 50%;
     left: 50%;
     margin: -43px 0px 0px -43px;
+}
+
+#stories-boxes1 {
+    margin-top: -50px;
+    display: table;
+}
+
+.thumb {
+    padding: 2%;
+}
+
+.story-box:nth-child(1) .thumb {
+    padding-left: 0;
+}
+
+.story-box:nth-last-child(2) .thumb {
+    padding-right: 0;
+}
+
+.mid {
+    margin-top: 70px;
+}
+
+#stories-boxes1 .mid img {
+    margin-bottom: -70px;
+}
+
+.story-box img {
+    width: 100%;
 }
 
 .grid5 {
@@ -218,9 +418,200 @@ footer {
 }
 
 .grid24 {
-	width: 24%;
+    width: 24%;
 }
 
 .grid30 {
     width: 30%;
+}
+
+
+/*PROJECT*/
+
+#project .project-content {
+    width: 100%;
+    padding: 11% 0;
+    background: #EBE7E3;
+    max-height: 680px
+}
+
+.images {
+    position: relative;
+    width: 50%;
+    float: left;
+}
+
+.project-right {
+    float: right;
+    width: 45%;
+    padding: 40px 0 0 40px;
+}
+
+#project {
+    margin: 80px 0;
+    position: relative;
+}
+
+.project-image {
+    float: left;
+    width: 55%;
+}
+
+.project-image .building-image {
+    margin-top: -10%;
+}
+
+#project .content {
+    font-size: 17px;
+    color: rgba(79, 80, 80, 0.5);
+    padding-bottom: 30px;
+    width: 70%;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    #project .project-content {
+        max-height: 550px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .blurb-container {
+        width: 90%;
+    }
+    .blueprint {
+        height: 450px;
+        bottom: auto;
+        top: -8%;
+    }
+    .building {
+        height: 300px;
+        bottom: auto;
+        top: 35%;
+    }
+    #project .content {
+        font-size: 14px;
+    }
+    #project .title {
+        font-size: 24px;
+    }
+    #project .project-content {
+        max-height: 440px;
+        padding: 5% 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    a.logo {
+        width: 75px;
+    }
+    #hero img {
+        max-width: 160%;
+        margin-left: -20%;
+    }
+    .hero-text {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .hero-text span {
+        font-size: 38px;
+        line-height: 44px;
+    }
+    #action,
+    #project,
+    #blurb {
+        padding: 40px 0;
+        margin: 0;
+    }
+    #stats .description,
+    #project .content,
+    #action .content {
+        width: 100%;
+    }
+    #stories-boxes1 .story-box {
+        height: auto;
+        float: left;
+        width: 50%;
+    }
+    #stories-boxes2 .story-box {
+        float: left;
+        width: 50%;
+    }
+    #stories-boxes2 {
+        margin-top: 0;
+        overflow: visible;
+        display: inline-block;
+    }
+    #stories-boxes1 {
+        overflow: visible;
+        display: inline-block;
+        margin-top: 50px;
+    }
+    #stories-boxes1 .story-box .thumb {
+        position: static;
+    }
+    .mid,
+    #stories-boxes1 .mid img {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .story-box:nth-last-child(2) .thumb,
+    .story-box:nth-child(1) .thumb {
+        padding: 2%;
+    }
+    #blurb .container {
+        padding: 0;
+    }
+    .blurb-container {
+        width: 100%;
+        padding: 40px 20px;
+    }
+    #blurb .title {
+        font-size: 30px;
+    }
+    #blurb .description {
+        font-size: 15px;
+        padding: 20px;
+    }
+    .line-top {
+        height: 15%;
+        top: -8%;
+    }
+    .line-bottom {
+        height: 15%;
+        bottom: -8%;
+    }
+    .blueprint {
+        position: static;
+        width: auto;
+        max-height: 400px;
+        margin-bottom: -20px;
+    }
+    .building {
+        display: none;
+    }
+    .project-right,
+    #masonry .content {
+        float: none;
+        width: 100%;
+        padding: 0 20px;
+    }
+    .project-image {
+        float: none;
+        display: block;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #stories-boxes1 .story-box {
+        height: auto;
+        float: none;
+        width: 100%;
+        display: block;
+    }
+    #stories-boxes2 .story-box {
+        float: none;
+        width: 100%;
+        display: block;
+    }
 }
